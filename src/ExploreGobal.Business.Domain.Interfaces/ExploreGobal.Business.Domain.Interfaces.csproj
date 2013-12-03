@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>7c28fc9b-58bf-4443-b9eb-1cd9afbbd7ca</ProjectGuid>
+    <ProjectGuid>{2B351F01-BAD4-46E3-B751-727C085BC25A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ExploreGobal.Business.Domain.Interfaces</RootNamespace>
@@ -40,8 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="IHotelRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExploreGobal.Business.Domain.Entities\ExploreGobal.Business.Domain.Entities.csproj">
+      <Project>{330907B5-0C34-488D-BAB8-A500011EC492}</Project>
+      <Name>ExploreGobal.Business.Domain.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
