@@ -36,6 +36,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExploreGobal.Presentation.ModelView", "ExploreGobal.Presentation.ModelView\ExploreGobal.Presentation.ModelView.csproj", "{CBF66052-AB51-4C3F-AE29-122D3764455F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExploreGlobal.Services.Interfaces", "ExploreGlobal.Services.Interfaces\ExploreGlobal.Services.Interfaces.csproj", "{1AE2E4E5-141C-4590-B976-0BDEB5271809}"
+EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = ExploreGlobal.vsmdi
@@ -77,6 +79,10 @@ Global
 		{CBF66052-AB51-4C3F-AE29-122D3764455F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBF66052-AB51-4C3F-AE29-122D3764455F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CBF66052-AB51-4C3F-AE29-122D3764455F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AE2E4E5-141C-4590-B976-0BDEB5271809}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AE2E4E5-141C-4590-B976-0BDEB5271809}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AE2E4E5-141C-4590-B976-0BDEB5271809}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AE2E4E5-141C-4590-B976-0BDEB5271809}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -91,5 +97,6 @@ Global
 		{DC772434-A347-42F2-ABF8-CFDD0093064B} = {9ED238EE-B8D2-4B01-A07B-F6B4E1D98BE1}
 		{330907B5-0C34-488D-BAB8-A500011EC492} = {BAE159F4-2569-4245-A0F3-C14DDCC882D1}
 		{2B351F01-BAD4-46E3-B751-727C085BC25A} = {BAE159F4-2569-4245-A0F3-C14DDCC882D1}
+		{1AE2E4E5-141C-4590-B976-0BDEB5271809} = {3C014F37-B71C-4828-BE2F-62C3C58CE91A}
 	EndGlobalSection
 EndGlobal
