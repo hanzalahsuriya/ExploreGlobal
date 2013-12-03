@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{3A2D6BFD-604F-46F1-B971-03004F170A17}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{1F9DDFFE-86FD-4FA9-8322-29490A147A8E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{85E23628-FFA7-4EFF-B52F-F18AD98E2503}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{9ED238EE-B8D2-4B01-A07B-F6B4E1D98BE1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{BAE159F4-2569-4245-A0F3-C14DDCC882D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExploreGobal.Presentation.ModelView", "ModelView\ExploreGobal.Presentation.ModelView.csproj", "{9C54DEE5-1C56-4BA5-ABA9-DE7253975F49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExploreGobal.Presentation.UI", "ExploreGobal.Presentation.WebApplication\ExploreGobal.Presentation.UI.csproj", "{FEDDDA51-34A2-4E89-97AC-C5B4DBE22420}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExploreGobal.Business.Domain.Entities", "ExploreGobal.Business.Domain.Entities\ExploreGobal.Business.Domain.Entities.csproj", "{330907B5-0C34-488D-BAB8-A500011EC492}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C54DEE5-1C56-4BA5-ABA9-DE7253975F49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C54DEE5-1C56-4BA5-ABA9-DE7253975F49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C54DEE5-1C56-4BA5-ABA9-DE7253975F49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C54DEE5-1C56-4BA5-ABA9-DE7253975F49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEDDDA51-34A2-4E89-97AC-C5B4DBE22420}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEDDDA51-34A2-4E89-97AC-C5B4DBE22420}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEDDDA51-34A2-4E89-97AC-C5B4DBE22420}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEDDDA51-34A2-4E89-97AC-C5B4DBE22420}.Release|Any CPU.Build.0 = Release|Any CPU
+		{330907B5-0C34-488D-BAB8-A500011EC492}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{330907B5-0C34-488D-BAB8-A500011EC492}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{330907B5-0C34-488D-BAB8-A500011EC492}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{330907B5-0C34-488D-BAB8-A500011EC492}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9C54DEE5-1C56-4BA5-ABA9-DE7253975F49} = {3A2D6BFD-604F-46F1-B971-03004F170A17}
+		{FEDDDA51-34A2-4E89-97AC-C5B4DBE22420} = {3A2D6BFD-604F-46F1-B971-03004F170A17}
+		{330907B5-0C34-488D-BAB8-A500011EC492} = {BAE159F4-2569-4245-A0F3-C14DDCC882D1}
+	EndGlobalSection
+EndGlobal
