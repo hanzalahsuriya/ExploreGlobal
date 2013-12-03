@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>15185d99-4a61-4644-a634-9caace36ecbf</ProjectGuid>
+    <ProjectGuid>{185185A8-5659-4896-81AF-265661F81BE5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ExplorGlobal.Api.Models</RootNamespace>
