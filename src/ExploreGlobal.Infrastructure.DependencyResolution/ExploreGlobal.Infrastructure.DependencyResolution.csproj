@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Ninject">
+      <HintPath>..\..\lib\Ninject.3.0.1.10\lib\net40\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,8 +43,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="RepositoryModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExploreGobal.Business.Domain.Entities\ExploreGobal.Business.Domain.Entities.csproj">
+      <Project>{330907b5-0c34-488d-bab8-a500011ec492}</Project>
+      <Name>ExploreGobal.Business.Domain.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExploreGobal.Business.Domain.Interfaces\ExploreGobal.Business.Domain.Interfaces.csproj">
+      <Project>{2b351f01-bad4-46e3-b751-727c085bc25a}</Project>
+      <Name>ExploreGobal.Business.Domain.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExploreGobal.Infrastructure.Data\ExploreGlobal.Infrastructure.Data.csproj">
+      <Project>{7716a8e8-3b8b-4280-b098-947beda24e1a}</Project>
+      <Name>ExploreGlobal.Infrastructure.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

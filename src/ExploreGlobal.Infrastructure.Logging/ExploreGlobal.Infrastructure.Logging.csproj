@@ -1,16 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{7716A8E8-3B8B-4280-B098-947BEDA24E1A}</ProjectGuid>
+    <ProjectGuid>{C58B031C-C654-4A95-A0D9-A7960C426DD6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ExploreGlobal.Infrastructure.Data</RootNamespace>
-    <AssemblyName>ExploreGlobal.Infrastructure.Data</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <RootNamespace>ExploreGlobal.Infrastructure.Logging</RootNamespace>
+    <AssemblyName>ExploreGlobal.Infrastructure.Logging</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -40,18 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Repositories\HotelRepository.cs" />
+    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ExploreGobal.Business.Domain.Entities\ExploreGobal.Business.Domain.Entities.csproj">
-      <Project>{330907b5-0c34-488d-bab8-a500011ec492}</Project>
-      <Name>ExploreGobal.Business.Domain.Entities</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ExploreGobal.Business.Domain.Interfaces\ExploreGobal.Business.Domain.Interfaces.csproj">
-      <Project>{2b351f01-bad4-46e3-b751-727c085bc25a}</Project>
-      <Name>ExploreGobal.Business.Domain.Interfaces</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

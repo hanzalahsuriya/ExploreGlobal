@@ -20,6 +20,21 @@ namespace ExploreGobal.Presentation.WebApplication
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+
+            /*
+          private static void RegisterServices(IKernel kernel)
+            {
+                // Bind local services     
+                kernel.Bind<IProductService>().To<ProductService>();
+    
+               // Add data and infrastructure modules     
+               var modules = new List<INinjectModule>
+                    {
+                        new RepositoryModule()
+                    };
+                kernel.Load(modules);
+            }*/
         }
     }
 }
