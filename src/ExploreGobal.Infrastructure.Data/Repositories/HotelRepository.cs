@@ -1,5 +1,7 @@
 ﻿using ExploreGobal.Business.Domain.Interfaces;
 using ExploreGobal.Business.Domain.Entities;
+using System.Collections.Generic;
+using System.Linq;
 namespace ExploreGlobal.Infrastructure.Data.Repositories
 {
     public class HotelRepository : IHotelRepository 
@@ -8,7 +10,16 @@ namespace ExploreGlobal.Infrastructure.Data.Repositories
         {
             get
             {
-                throw new System.NotImplementedException();
+                List<Hotel> hotels = new List<Hotel> 
+                                    { 
+                                        new Hotel { Name = "h1" }, 
+                                        new Hotel { Name = "h2" }, 
+                                        new Hotel { Name = "h3" }, 
+                                        new Hotel { Name = "h4" }, 
+                                        new Hotel { Name = "h5" } 
+                                    };
+                
+                return hotels.AsQueryable();
             }
             set
             {

@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LoggingModule.cs" />
     <Compile Include="RepositoryModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -50,6 +51,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ExploreGlobal.Infrastructure.Interfaces\ExploreGlobal.Infrastructure.Interfaces.csproj">
+      <Project>{9f021d3f-d9b9-4423-bd46-5eb6cc29f46b}</Project>
+      <Name>ExploreGlobal.Infrastructure.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExploreGlobal.Infrastructure.Logging\ExploreGlobal.Infrastructure.Logging.csproj">
+      <Project>{c58b031c-c654-4a95-a0d9-a7960c426dd6}</Project>
+      <Name>ExploreGlobal.Infrastructure.Logging</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ExploreGobal.Business.Domain.Entities\ExploreGobal.Business.Domain.Entities.csproj">
       <Project>{330907b5-0c34-488d-bab8-a500011ec492}</Project>
       <Name>ExploreGobal.Business.Domain.Entities</Name>

@@ -1,4 +1,5 @@
 ﻿using ExploreGlobal.Infrastructure.Data;
+using ExploreGlobal.Infrastructure.Data.Repositories;
 using ExploreGobal.Business.Domain.Interfaces;
 using Ninject.Modules;
 using System;
@@ -12,7 +13,7 @@ namespace ExploreGlobal.Infrastructure.DependencyResolution
     {
         public override void Load()
         {
-            Bind<IHotelRepository>().To<IHotelRepository>();
+            Bind<IHotelRepository>().To<HotelRepository>();
         }
     }
 }

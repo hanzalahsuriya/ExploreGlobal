@@ -40,6 +40,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Ninject">
+      <HintPath>..\..\lib\Ninject.3.0.1.10\lib\net40\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -108,6 +111,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\NinjectDependencyResolver.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -143,10 +148,27 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExploreGlobal.Infrastructure.DependencyResolution\ExploreGlobal.Infrastructure.DependencyResolution.csproj">
+      <Project>{c5ad2dd5-fddd-491c-8092-3bd6a14e2002}</Project>
+      <Name>ExploreGlobal.Infrastructure.DependencyResolution</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExploreGlobal.Infrastructure.Interfaces\ExploreGlobal.Infrastructure.Interfaces.csproj">
+      <Project>{9f021d3f-d9b9-4423-bd46-5eb6cc29f46b}</Project>
+      <Name>ExploreGlobal.Infrastructure.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExploreGobal.Business.Domain.Entities\ExploreGobal.Business.Domain.Entities.csproj">
+      <Project>{330907b5-0c34-488d-bab8-a500011ec492}</Project>
+      <Name>ExploreGobal.Business.Domain.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExploreGobal.Business.Domain.Interfaces\ExploreGobal.Business.Domain.Interfaces.csproj">
+      <Project>{2b351f01-bad4-46e3-b751-727c085bc25a}</Project>
+      <Name>ExploreGobal.Business.Domain.Interfaces</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
