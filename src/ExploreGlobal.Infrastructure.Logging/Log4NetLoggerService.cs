@@ -16,6 +16,7 @@ namespace ExploreGlobal.Infrastructure.Logging
         public Log4NetLoggerService()
         {
             _logger = LogManager.GetLogger(this.GetType());
+            log4net.Config.XmlConfigurator.Configure(); 
         }
 
         public void Info(string message)

@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Http;
+﻿using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Routing;
 using ExploreGobal.Presentation.UI.App_Start;
-using Ninject;
-using Ninject.Modules;
 
-namespace ExploreGobal.Presentation.WebApplication
+namespace ExploreGobal.Presentation.UI
 {
     // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
     // visit http://go.microsoft.com/?LinkId=9394801
@@ -22,7 +16,7 @@ namespace ExploreGobal.Presentation.WebApplication
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            DependencyResolver.SetResolver(new NinjectDependencyResolver());           
+            DependencyResolver.SetResolver(new NinjectDependencyResolver());
         }
     }
 }
