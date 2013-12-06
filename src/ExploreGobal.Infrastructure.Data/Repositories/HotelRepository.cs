@@ -19,7 +19,6 @@ namespace ExploreGlobal.Infrastructure.Data.Repositories
             } 
         }
 
-
         public void Save(Hotel hotel)
         {
             if ((hotel.Id == null) || (hotel.Id == Guid.Empty))
@@ -43,5 +42,7 @@ namespace ExploreGlobal.Infrastructure.Data.Repositories
         {
             
         }
+        
+        
     }
 }

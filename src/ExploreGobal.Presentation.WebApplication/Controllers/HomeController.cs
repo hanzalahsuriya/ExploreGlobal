@@ -26,8 +26,13 @@ namespace ExploreGobal.Presentation.UI.Controllers
         {
             _loggingService.Warn("GET Action: ProductController.Index");         
             _loggingService.Error(string.Format("Workflow {0}.", Guid.NewGuid()));
-
+            
             return View(_hotelRepository.Hotels);
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
         }
 
     }
