@@ -8,6 +8,10 @@ namespace ExploreGobal.Business.Domain.Interfaces
 {
     public interface IHotelRepository
     {
-        IQueryable<Hotel> Hotels { get; set; }
+        IQueryable<Hotel> Hotels { get; }
+
+        void Save(Hotel hotel);
+
+        void Delete(int Id);
     }
 }

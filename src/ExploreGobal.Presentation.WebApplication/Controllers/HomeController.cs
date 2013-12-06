@@ -22,19 +22,12 @@ namespace ExploreGobal.Presentation.UI.Controllers
             _loggingService = logservice;
         }
 
-        public string Index()
+        public ViewResult Index()
         {
-            _loggingService.Warn("GET Action: ProductController.Index");
-            var sb = new StringBuilder();
-            foreach (var h in _hotelRepository.Hotels)
-            {
-                sb.Append(h.Name + "<br/>");
-            }
-            _loggingService.Error(string.Format("Workflow {0} ERROR.", Guid.NewGuid()));
+            _loggingService.Warn("GET Action: ProductController.Index");         
+            _loggingService.Error(string.Format("Workflow {0}.", Guid.NewGuid()));
 
-            return sb.ToString();
-
-
+            return View(_hotelRepository.Hotels);
         }
 
     }

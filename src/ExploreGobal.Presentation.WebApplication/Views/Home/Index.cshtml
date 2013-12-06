@@ -1,0 +1,12 @@
+﻿@model IEnumerable<ExploreGobal.Business.Domain.Entities.Hotel> 
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@foreach (var hotel in Model)
+{ 
+    <p>@hotel.Name</p>
+}

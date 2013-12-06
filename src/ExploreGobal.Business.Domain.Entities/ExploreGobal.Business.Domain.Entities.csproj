@@ -40,6 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Country.cs" />
+    <Compile Include="City.cs" />
+    <Compile Include="Address.cs" />
     <Compile Include="Hotel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

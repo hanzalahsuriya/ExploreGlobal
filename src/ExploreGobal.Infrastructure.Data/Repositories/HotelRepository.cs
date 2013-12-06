@@ -2,29 +2,46 @@
 using ExploreGobal.Business.Domain.Entities;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
+using ExploreGlobal.Infrastructure.Data.Context;
+using System;
 namespace ExploreGlobal.Infrastructure.Data.Repositories
 {
     public class HotelRepository : IHotelRepository 
     {
+        public HotelContext context = new HotelContext();
+
         public System.Linq.IQueryable<Hotel> Hotels
         {
             get
             {
-                List<Hotel> hotels = new List<Hotel> 
-                                    { 
-                                        new Hotel { Name = "h1" }, 
-                                        new Hotel { Name = "h2" }, 
-                                        new Hotel { Name = "h3" }, 
-                                        new Hotel { Name = "h4" }, 
-                                        new Hotel { Name = "h5" } 
-                                    };
-                
-                return hotels.AsQueryable();
-            }
-            set
+                return context.Hotels;
+            } 
+        }
+
+
+        public void Save(Hotel hotel)
+        {
+            if ((hotel.Id == null) || (hotel.Id == Guid.Empty))
             {
-                throw new System.NotImplementedException();
+                context.Hotels.Add(hotel);
             }
+            else
+            {
+                var existing_hotel = context.Hotels.First(x => x.Id == hotel.Id);
+                if (existing_hotel != null)
+                {
+                    existing_hotel.Name = hotel.Name;
+                    //Add more mapping
+                }
+            }
+
+            context.SaveChanges();
+        }
+
+        public void Delete(int Id)
+        {
+            
         }
     }
 }
