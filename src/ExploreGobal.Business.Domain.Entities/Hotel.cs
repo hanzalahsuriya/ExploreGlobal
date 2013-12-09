@@ -16,7 +16,7 @@ namespace ExploreGobal.Business.Domain.Entities
 
     public class Hotel
     {
-        public HotelRatingCategory HotelRatingCategory
+        public HotelRatingCategory? HotelRatingCategory
         {
             get;
             set;
@@ -39,7 +39,7 @@ namespace ExploreGobal.Business.Domain.Entities
             set;
         }
 
-        public Guid AddressId
+        /*public Guid AddressId
         {
             get;
             set;
@@ -49,6 +49,6 @@ namespace ExploreGobal.Business.Domain.Entities
         { 
             get; 
             set; 
-        }
+        }*/
     }
 }

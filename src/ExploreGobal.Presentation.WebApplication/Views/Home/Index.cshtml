@@ -1,12 +1,12 @@
-﻿@model IEnumerable<ExploreGobal.Business.Domain.Entities.Hotel> 
-
-@{
+﻿@{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>
+    Home
+</h2>
 
-@foreach (var hotel in Model)
-{ 
-    <p>@hotel.Name</p>
-}
+<ul class="nav nav-pills">
+    <li>@Html.ActionLink("List of Hotels", "List", "Hotel", null, new { @class = "lnk" })</li>
+    <li>@Html.ActionLink("Insert Hotel", "Insert", "Hotel", null, new { @class = "lnk" })</li>
+</ul>

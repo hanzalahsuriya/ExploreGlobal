@@ -13,21 +13,21 @@ namespace ExploreGobal.Presentation.UI.Controllers
 {
     public class HomeController : Controller
     {
-        private IHotelRepository _hotelRepository;
-        private ILoggingService _loggingService;
+        ILoggingService _loggingService;
 
-        public HomeController(IHotelRepository hotelRepo, ILoggingService logservice)
+        public HomeController(ILoggingService logservice)
         {
-            _hotelRepository = hotelRepo;
             _loggingService = logservice;
         }
 
         public ViewResult Index()
         {
-            _loggingService.Warn("GET Action: ProductController.Index");         
+            /*_loggingService.Warn("GET Action: ProductController.Index");         
             _loggingService.Error(string.Format("Workflow {0}.", Guid.NewGuid()));
             
-            return View(_hotelRepository.Hotels);
+            return View(_hotelRepository.Hotels);*/
+            _loggingService.Info("Home page");
+            return View();
         }
 
         protected override void Dispose(bool disposing)

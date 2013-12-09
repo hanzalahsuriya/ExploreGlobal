@@ -23,6 +23,7 @@ namespace ExploreGlobal.Infrastructure.Data.Repositories
         {
             if ((hotel.Id == null) || (hotel.Id == Guid.Empty))
             {
+                hotel.Id = Guid.NewGuid();
                 context.Hotels.Add(hotel);
             }
             else
