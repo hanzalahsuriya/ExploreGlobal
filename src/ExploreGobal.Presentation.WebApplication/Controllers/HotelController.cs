@@ -53,5 +53,11 @@ namespace ExploreGobal.Presentation.UI.Controllers
             }
             return View("List");
         }
+
+        public ActionResult Delete(Guid hotelId)
+        {
+            hotelRepository.Delete(hotelId);
+            return RedirectToAction("List");
+        }
     }
 }

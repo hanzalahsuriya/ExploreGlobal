@@ -39,9 +39,15 @@ namespace ExploreGlobal.Infrastructure.Data.Repositories
             context.SaveChanges();
         }
 
-        public void Delete(int Id)
+        public void Delete(Guid Id)
         {
-            
+            var hotel = context.Hotels.FirstOrDefault(x=>x.Id == Id);
+
+            if (hotel != null)
+            {
+                context.Hotels.Remove(hotel);
+                context.SaveChanges();
+            }
         }
         
         

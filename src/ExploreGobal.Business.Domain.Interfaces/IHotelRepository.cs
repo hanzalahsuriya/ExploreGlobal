@@ -12,6 +12,6 @@ namespace ExploreGobal.Business.Domain.Interfaces
 
         void Save(Hotel hotel);
 
-        void Delete(int Id);
+        void Delete(Guid hotelId);
     }
 }
