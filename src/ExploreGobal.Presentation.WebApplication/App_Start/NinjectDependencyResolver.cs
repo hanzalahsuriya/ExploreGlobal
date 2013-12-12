@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace ExploreGobal.Presentation.UI.App_Start
 {
-    public class NinjectDependencyResolver : IDependencyResolver 
+    public class NinjectDependencyResolver : IDependencyResolver, IDisposable
     {
         public IKernel kernel;
 
@@ -33,6 +33,20 @@ namespace ExploreGobal.Presentation.UI.App_Start
         public IEnumerable<object> GetServices(Type serviceType)
         {
             return kernel.GetAll(serviceType);
+        }
+
+        public virtual void Dispose()
+        {
+            this.Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        public void Dispose(bool isDispose)
+        {
+            if (isDispose)
+            {
+                kernel.Dispose();
+            }
         }
     }
 }
