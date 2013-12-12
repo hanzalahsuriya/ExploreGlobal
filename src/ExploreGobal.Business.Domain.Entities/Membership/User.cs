@@ -13,6 +13,5 @@ namespace ExploreGobal.Business.Domain.Entities.Membership
 
         public string FirstName { get; set; }
         public string LastName { get; set; }
-
     }
 }
