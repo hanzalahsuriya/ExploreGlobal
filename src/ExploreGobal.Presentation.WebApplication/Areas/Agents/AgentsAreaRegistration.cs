@@ -17,7 +17,8 @@ namespace ExploreGobal.Presentation.UI.Areas.Agents
             context.MapRoute(
                 "Agents_default",
                 "Agents/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { action = "Index", id = UrlParameter.Optional },
+                namespaces: new[] { "ExploreGobal.Presentation.UI.Areas.Agents.Controllers" }
             );
         }
     }

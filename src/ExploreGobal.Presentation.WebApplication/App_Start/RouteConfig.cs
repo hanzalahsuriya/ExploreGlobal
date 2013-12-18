@@ -13,7 +13,7 @@ namespace ExploreGobal.Presentation.UI.App_Start
                name: "Default",
                url: "{controller}/{action}/{id}",
                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
-               namespaces: new[] { "ExploreGobal.Presentation.UI.Areas._Public.Controllers" }
+               namespaces: new[] { "ExploreGobal.Presentation.UI.Controllers" }
            );
             
         }

@@ -17,7 +17,8 @@ namespace ExploreGobal.Presentation.UI.Areas.Admin
             context.MapRoute(
                 "Admin_default",
                 "Admin/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { action = "Index", id = UrlParameter.Optional },
+               namespaces: new[] { "ExploreGobal.Presentation.UI.Areas.Admin.Controllers" }
             );
         }
     }
