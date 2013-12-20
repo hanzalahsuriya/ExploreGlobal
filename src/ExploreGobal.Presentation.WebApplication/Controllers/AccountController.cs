@@ -8,7 +8,9 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
-using WebApplication2.Models;
+using Entity = ExploreGobal.Business.Domain.Entities;
+using ExploreGobal.Presentation.ModelView;
+using ExploreGobal.Business.Domain.Interfaces;
 
 namespace ExploreGobal.Presentation.UI.Controllers
 {
@@ -16,16 +18,16 @@ namespace ExploreGobal.Presentation.UI.Controllers
     public class AccountController : Controller
     {
         public AccountController()
-            : this(new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext())))
+            : this(new UserManager<Entity.Membership.UserProfile>(new UserStore<Entity.Membership.UserProfile>(new AccountDbContext())))
         {
         }
 
-        public AccountController(UserManager<ApplicationUser> userManager)
+        public AccountController(UserManager<Entity.Membership.UserProfile> userManager)
         {
             UserManager = userManager;
         }
 
-        public UserManager<ApplicationUser> UserManager { get; private set; }
+        public UserManager<Entity.Membership.UserProfile> UserManager { get; private set; }
 
         //
         // GET: /Account/Login
@@ -78,7 +80,7 @@ namespace ExploreGobal.Presentation.UI.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser() { UserName = model.UserName };
+                var user = new Entity.Membership.UserProfile() { UserName = model.UserName };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -265,7 +267,7 @@ namespace ExploreGobal.Presentation.UI.Controllers
                 {
                     return View("ExternalLoginFailure");
                 }
-                var user = new ApplicationUser() { UserName = model.UserName };
+                var user = new Entity.Membership.UserProfile() { UserName = model.UserName };
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {
@@ -323,7 +325,7 @@ namespace ExploreGobal.Presentation.UI.Controllers
         // Used for XSRF protection when adding external logins
         private const string XsrfKey = "XsrfId";
 
-        private IAuthenticationManager AuthenticationManager
+        private Microsoft.Owin.Security.IAuthenticationManager AuthenticationManager
         {
             get
             {
@@ -331,7 +333,7 @@ namespace ExploreGobal.Presentation.UI.Controllers
             }
         }
 
-        private async Task SignInAsync(ApplicationUser user, bool isPersistent)
+        private async Task SignInAsync(Entity.Membership.UserProfile user, bool isPersistent)
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ExternalCookie);
             var identity = await UserManager.CreateIdentityAsync(user, DefaultAuthenticationTypes.ApplicationCookie);

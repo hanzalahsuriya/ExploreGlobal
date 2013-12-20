@@ -9,8 +9,8 @@ namespace ExploreGlobal.Infrastructure.Data.Repositories
 {
     public class HotelRepository : IHotelRepository 
     {
-        public HotelContext context = new HotelContext();
-
+        public AppDBContext context = new AppDBContext();
+        
         public System.Linq.IQueryable<Hotel> Hotels
         {
             get

@@ -19,7 +19,8 @@ namespace ExploreGobal.Presentation.UI.App_Start
             var modules = new INinjectModule[]
                               {
                                  new RepositoryModule(), 
-                                 new LoggingModule()
+                                 new LoggingModule(),
+                                 new AccountModule()
                               };
 
             kernel = new StandardKernel(modules);
