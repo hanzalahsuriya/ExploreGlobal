@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace ExploreGobal.Presentation.Web.UI.Controllers
 {
+    [Authorize]
     public class HotelController : Controller
     {
         private IHotelRepository hotelRepository;
@@ -22,11 +23,13 @@ namespace ExploreGobal.Presentation.Web.UI.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         public ActionResult List()
         {
             return View(hotelRepository.Hotels);
         }
 
+        
         public ActionResult Insert()
         {
             return View(new Hotel());

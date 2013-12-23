@@ -18,14 +18,6 @@ namespace ExploreGlobal.Infrastructure.Data.Repositories
 
         private UserManager<UserProfile> _userManager;
 
-        /*public System.Linq.IQueryable<UserProfile> UserProfiles
-        {
-            get
-            {
-                return context.Users;
-            }
-        }*/
-
         public UserManager<UserProfile> UserManager 
         {
             get 
