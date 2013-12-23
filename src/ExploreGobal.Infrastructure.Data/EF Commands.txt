@@ -1,0 +1,13 @@
+﻿Update-Database -ConfigurationTypeName MyRenamedConfiguration
+e.g. Update-Database -ConfigurationTypeName ExploreGlobal.Infrastructure.Data.Migrations.ApplicationDBConfiguration
+------------------------------------------------------------------------------------------------------------------------------
+update-database -verbose
+------------------------------------------------------------------------------------------------------------------------------
+Enable-Migrations
+------------------------------------------------------------------------------------------------------------------------------
+To enable migrations for DatabaseService.Models.Product1DbContext, 
+Enable-Migrations -ContextTypeName ExploreGlobal.Infrastructure.Data.Context.AccountDbContext
+------------------------------------------------------------------------------------------------------------------------------
+Add-Migration -configuration Configuration1 Context1Init
+e.g. Add-Migration -configuration ExploreGlobal.Infrastructure.Data.Migrations.ApplicationDBConfiguration AddRemaining
+------------------------------------------------------------------------------------------------------------------------------

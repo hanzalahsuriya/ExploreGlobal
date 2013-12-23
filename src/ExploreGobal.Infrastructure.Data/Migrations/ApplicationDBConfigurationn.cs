@@ -5,15 +5,15 @@ namespace ExploreGlobal.Infrastructure.Data.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<ExploreGlobal.Infrastructure.Data.Context.AppDBContext>
+    internal sealed class ApplicationDbConfiguration : DbMigrationsConfiguration<ExploreGlobal.Infrastructure.Data.Context.AppDbContext>
     {
-        public Configuration()
+        public ApplicationDbConfiguration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "ExploreGlobal.Infrastructure.Data.Context.AppDBContext";
+            ContextKey = "ExploreGlobal.Infrastructure.Data.Context.AppDbContext";
         }
 
-        protected override void Seed(ExploreGlobal.Infrastructure.Data.Context.AppDBContext context)
+        protected override void Seed(ExploreGlobal.Infrastructure.Data.Context.AppDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

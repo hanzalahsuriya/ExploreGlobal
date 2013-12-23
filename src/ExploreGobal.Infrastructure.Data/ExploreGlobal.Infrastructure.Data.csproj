@@ -58,7 +58,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Context\AccountDbContext.cs" />
     <Compile Include="Context\AppDBContext.cs" />
     <Compile Include="Migrations\201312060053416_InitialCreate.cs" />
     <Compile Include="Migrations\201312060053416_InitialCreate.Designer.cs">
@@ -72,7 +71,15 @@
     <Compile Include="Migrations\201312090125423_HotelEntryModificationNoRatings.Designer.cs">
       <DependentUpon>201312090125423_HotelEntryModificationNoRatings.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\201312231049400_AddRemaining.cs" />
+    <Compile Include="Migrations\201312231049400_AddRemaining.Designer.cs">
+      <DependentUpon>201312231049400_AddRemaining.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201312231115398_Accounts.cs" />
+    <Compile Include="Migrations\201312231115398_Accounts.Designer.cs">
+      <DependentUpon>201312231115398_Accounts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\ApplicationDBConfigurationn.cs" />
     <Compile Include="Repositories\HotelRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
@@ -106,6 +113,15 @@
     <EmbeddedResource Include="Migrations\201312090125423_HotelEntryModificationNoRatings.resx">
       <DependentUpon>201312090125423_HotelEntryModificationNoRatings.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312231049400_AddRemaining.resx">
+      <DependentUpon>201312231049400_AddRemaining.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312231115398_Accounts.resx">
+      <DependentUpon>201312231115398_Accounts.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EF Commands.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

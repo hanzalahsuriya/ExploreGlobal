@@ -14,7 +14,7 @@ namespace ExploreGlobal.Infrastructure.Data.Repositories
 {
     class UserRepository : IUserRepository 
     {
-        public AccountDbContext context = new AccountDbContext();
+        public AppDbContext context = new AppDbContext();
 
         private UserManager<UserProfile> _userManager;
 
@@ -30,7 +30,7 @@ namespace ExploreGlobal.Infrastructure.Data.Repositories
         {
             get 
             {
-                _userManager = new UserManager<UserProfile>(new UserStore<UserProfile>(new AccountDbContext()));
+                _userManager = new UserManager<UserProfile>(new UserStore<UserProfile>(new AppDbContext()));
                 return _userManager;
             }
             set 

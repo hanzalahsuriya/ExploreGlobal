@@ -1,18 +1,20 @@
 ﻿using ExploreGobal.Business.Domain.Entities;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using Entity = ExploreGobal.Business.Domain.Entities.Membership;
 using System.Linq;
 using System.Text;
 
 namespace ExploreGlobal.Infrastructure.Data.Context
 {
-    public class AppDBContext : DbContext 
+    public class AppDbContext : IdentityDbContext<Entity.UserProfile> 
     {
 
-        public AppDBContext() : base("DbContext")
+        public AppDbContext() : base("DbContext")
         { }
 
         public DbSet<Hotel> Hotels { get; set; }
@@ -22,6 +24,7 @@ namespace ExploreGlobal.Infrastructure.Data.Context
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
     }
