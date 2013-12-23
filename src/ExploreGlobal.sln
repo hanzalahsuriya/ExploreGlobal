@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Express 2013 for Web
+# Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{3A2D6BFD-604F-46F1-B971-03004F170A17}"
@@ -12,8 +12,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{9ED238EE-B8D2-4B01-A07B-F6B4E1D98BE1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{BAE159F4-2569-4245-A0F3-C14DDCC882D1}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExploreGobal.Presentation.UI", "ExploreGobal.Presentation.WebApplication\ExploreGobal.Presentation.UI.csproj", "{FEDDDA51-34A2-4E89-97AC-C5B4DBE22420}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExploreGobal.Business.Domain.Entities", "ExploreGobal.Business.Domain.Entities\ExploreGobal.Business.Domain.Entities.csproj", "{330907B5-0C34-488D-BAB8-A500011EC492}"
 EndProject
@@ -54,10 +52,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FEDDDA51-34A2-4E89-97AC-C5B4DBE22420}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FEDDDA51-34A2-4E89-97AC-C5B4DBE22420}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FEDDDA51-34A2-4E89-97AC-C5B4DBE22420}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FEDDDA51-34A2-4E89-97AC-C5B4DBE22420}.Release|Any CPU.Build.0 = Release|Any CPU
 		{330907B5-0C34-488D-BAB8-A500011EC492}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{330907B5-0C34-488D-BAB8-A500011EC492}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{330907B5-0C34-488D-BAB8-A500011EC492}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -111,7 +105,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{FEDDDA51-34A2-4E89-97AC-C5B4DBE22420} = {3A2D6BFD-604F-46F1-B971-03004F170A17}
 		{CBF66052-AB51-4C3F-AE29-122D3764455F} = {3A2D6BFD-604F-46F1-B971-03004F170A17}
 		{F281E4BA-8685-4D50-A2EC-658437DE9F38} = {3A2D6BFD-604F-46F1-B971-03004F170A17}
 		{185185A8-5659-4896-81AF-265661F81BE5} = {1F9DDFFE-86FD-4FA9-8322-29490A147A8E}
