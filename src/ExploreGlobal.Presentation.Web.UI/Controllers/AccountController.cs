@@ -7,50 +7,25 @@ using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.Owin.Security;
+using ExploreGlobal.Presentation.Web.UI.Models;
 
-using ExploreGobal.Business.Domain.Interfaces;//.Security;
-using Entity = ExploreGobal.Business.Domain.Entities;
-using ExploreGobal.Presentation.ModelView;
-using ExploreGobal.Business.Domain.Interfaces;
-
-namespace ExploreGobal.Presentation.UI.Controllers
+namespace ExploreGlobal.Presentation.Web.UI.Controllers
 {
     [Authorize]
     public class AccountController : Controller
     {
-        private IUserRepository _userRepository;
-
-        public AccountController(IUserRepository userRepository)
+        public AccountController()
+            : this(new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext())))
         {
-            _userRepository = userRepository;
         }
 
-        public UserManager<Entity.Membership.UserProfile> UserManager 
-        {
-            get 
-            {
-                return _userRepository.UserManager;
-            }
-            private set; 
-        }
-
-        /*public AccountController()
-            : this(new UserManager<Entity.Membership.UserProfile>(new UserStore<Entity.Membership.UserProfile>(new AccountDbContext())))
-        {
-
-            
-        }
-
-        public AccountController(UserManager<Entity.Membership.UserProfile> userManager)
+        public AccountController(UserManager<ApplicationUser> userManager)
         {
             UserManager = userManager;
         }
-         
-        public UserManager<Entity.Membership.UserProfile> UserManager { get; private set; } 
-         
-         */
 
-
+        public UserManager<ApplicationUser> UserManager { get; private set; }
 
         //
         // GET: /Account/Login
@@ -103,7 +78,7 @@ namespace ExploreGobal.Presentation.UI.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new Entity.Membership.UserProfile() { UserName = model.UserName };
+                var user = new ApplicationUser() { UserName = model.UserName };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -290,7 +265,7 @@ namespace ExploreGobal.Presentation.UI.Controllers
                 {
                     return View("ExternalLoginFailure");
                 }
-                var user = new Entity.Membership.UserProfile() { UserName = model.UserName };
+                var user = new ApplicationUser() { UserName = model.UserName };
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {
@@ -356,7 +331,7 @@ namespace ExploreGobal.Presentation.UI.Controllers
             }
         }
 
-        private async Task SignInAsync(Entity.Membership.UserProfile user, bool isPersistent)
+        private async Task SignInAsync(ApplicationUser user, bool isPersistent)
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ExternalCookie);
             var identity = await UserManager.CreateIdentityAsync(user, DefaultAuthenticationTypes.ApplicationCookie);
