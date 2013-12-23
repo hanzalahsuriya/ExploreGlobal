@@ -171,8 +171,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -227,6 +225,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -247,6 +246,10 @@
     <ProjectReference Include="..\ExploreGobal.Business.Domain.Interfaces\ExploreGobal.Business.Domain.Interfaces.csproj">
       <Project>{2b351f01-bad4-46e3-b751-727c085bc25a}</Project>
       <Name>ExploreGobal.Business.Domain.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExploreGobal.Presentation.ModelView\ExploreGobal.Presentation.ModelView.csproj">
+      <Project>{cbf66052-ab51-4c3f-ae29-122d3764455f}</Project>
+      <Name>ExploreGobal.Presentation.ModelView</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -5,27 +5,37 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using ExploreGobal.Business.Domain.Entities.Membership;
+using ExploreGobal.Business.Domain.Interfaces;
+using ExploreGobal.Presentation.ModelView;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
-using ExploreGlobal.Presentation.Web.UI.Models;
+//using ExploreGlobal.Presentation.Web.UI.Models;
 
 namespace ExploreGlobal.Presentation.Web.UI.Controllers
 {
     [Authorize]
     public class AccountController : Controller
     {
-        public AccountController()
-            : this(new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext())))
+        private IUserRepository _userRepository;
+
+        public AccountController(IUserRepository userRepository)
         {
+            _userRepository = userRepository;
         }
 
-        public AccountController(UserManager<ApplicationUser> userManager)
-        {
-            UserManager = userManager;
-        }
+        public UserManager<UserProfile> UserManager {
+            get
+            {
+                return _userRepository.UserManager;
 
-        public UserManager<ApplicationUser> UserManager { get; private set; }
+            }
+            private set
+            {
+                _userRepository.UserManager = value;
+            }
+        }
 
         //
         // GET: /Account/Login
@@ -78,7 +88,7 @@ namespace ExploreGlobal.Presentation.Web.UI.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser() { UserName = model.UserName };
+                var user = new UserProfile() { UserName = model.UserName };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -265,7 +275,7 @@ namespace ExploreGlobal.Presentation.Web.UI.Controllers
                 {
                     return View("ExternalLoginFailure");
                 }
-                var user = new ApplicationUser() { UserName = model.UserName };
+                var user = new UserProfile() { UserName = model.UserName };
                 var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {
@@ -331,7 +341,7 @@ namespace ExploreGlobal.Presentation.Web.UI.Controllers
             }
         }
 
-        private async Task SignInAsync(ApplicationUser user, bool isPersistent)
+        private async Task SignInAsync(UserProfile user, bool isPersistent)
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ExternalCookie);
             var identity = await UserManager.CreateIdentityAsync(user, DefaultAuthenticationTypes.ApplicationCookie);
