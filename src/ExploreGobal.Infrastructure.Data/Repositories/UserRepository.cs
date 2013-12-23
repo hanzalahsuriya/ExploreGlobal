@@ -12,7 +12,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace ExploreGlobal.Infrastructure.Data.Repositories
 {
-    class UserRepository : IUserRepository 
+    public class UserRepository : IUserRepository 
     {
         public AppDbContext context = new AppDbContext();
 

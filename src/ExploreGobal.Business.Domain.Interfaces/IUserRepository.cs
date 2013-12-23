@@ -13,6 +13,6 @@ namespace ExploreGobal.Business.Domain.Interfaces
     {
         //IQueryable<UserProfile> Users;
 
-        UserManager<UserProfile> UserManager { get;}
+        UserManager<UserProfile> UserManager { get; set; }
     }
 }

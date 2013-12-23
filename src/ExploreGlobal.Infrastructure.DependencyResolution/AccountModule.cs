@@ -15,7 +15,7 @@ namespace ExploreGlobal.Infrastructure.DependencyResolution
     {
         public override void Load()
         {
-            Bind<IUserRepository>().To<IUserRepository>();
+            Bind<IUserRepository>().To<UserRepository>();
         }
     }
 }
