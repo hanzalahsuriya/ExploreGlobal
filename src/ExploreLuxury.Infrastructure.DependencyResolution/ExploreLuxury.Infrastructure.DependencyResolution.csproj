@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C5AD2DD5-FDDD-491C-8092-3BD6A14E2002}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ExploreLuxury.Infrastructure.DependencyResolution</RootNamespace>
+    <AssemblyName>ExploreLuxury.Infrastructure.DependencyResolution</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ninject">
+      <HintPath>..\..\lib\Ninject.3.0.1.10\lib\net40\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountModule.cs" />
+    <Compile Include="LoggingModule.cs" />
+    <Compile Include="RepositoryModule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExploreLuxury.Infrastructure.Interfaces\ExploreLuxury.Infrastructure.Interfaces.csproj">
+      <Project>{9f021d3f-d9b9-4423-bd46-5eb6cc29f46b}</Project>
+      <Name>ExploreLuxury.Infrastructure.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExploreLuxury.Infrastructure.Logging\ExploreLuxury.Infrastructure.Logging.csproj">
+      <Project>{c58b031c-c654-4a95-a0d9-a7960c426dd6}</Project>
+      <Name>ExploreLuxury.Infrastructure.Logging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExploreLuxury.Business.Domain.Entities\ExploreLuxury.Business.Domain.Entities.csproj">
+      <Project>{330907b5-0c34-488d-bab8-a500011ec492}</Project>
+      <Name>ExploreLuxury.Business.Domain.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExploreLuxury.Business.Domain.Interfaces\ExploreLuxury.Business.Domain.Interfaces.csproj">
+      <Project>{2b351f01-bad4-46e3-b751-727c085bc25a}</Project>
+      <Name>ExploreLuxury.Business.Domain.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ExploreLuxury.Infrastructure.Data\ExploreLuxury.Infrastructure.Data.csproj">
+      <Project>{7716a8e8-3b8b-4280-b098-947beda24e1a}</Project>
+      <Name>ExploreLuxury.Infrastructure.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
